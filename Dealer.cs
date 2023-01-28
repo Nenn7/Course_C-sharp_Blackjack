@@ -8,5 +8,8 @@ namespace CourseC_sharp_Game
 {
     internal class Dealer
     {
+        // Lista av Kort
+
+        // Konstruktor som tar två kort ifrån korthög och lägger till i lista av kort.
     }
 }
