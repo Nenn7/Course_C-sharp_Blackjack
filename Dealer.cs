@@ -13,3 +13,5 @@ namespace CourseC_sharp_Game
         // Konstruktor som tar två kort ifrån korthög och lägger till i lista av kort.
     }
 }
+
+}

@@ -19,3 +19,12 @@ namespace CourseC_sharp_Game
         //Funktion för att summera spelare och dealers kortvärden
     }
 }
+
+
+public class CardStack
+{ 
+    public CardStack()
+    {
+
+    }
+}
