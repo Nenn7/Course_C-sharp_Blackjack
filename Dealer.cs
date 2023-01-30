@@ -14,4 +14,3 @@ namespace CourseC_sharp_Game
     }
 }
 
-}
