@@ -14,7 +14,7 @@ namespace CourseC_sharp_Game
 
         int blackjack = 21;
 
-
+        
         // (Player & dealer tar 2 kort var ifrån stack) 
         Player player1 = new Player();
         Player dealer = new Player();
@@ -49,8 +49,8 @@ namespace CourseC_sharp_Game
                     break;
                 }
 
-                if (player1.SumOfCards() < blackjack)
-                {
+                //if (player1.SumOfCards() < blackjack)
+                //{
                     Console.WriteLine("Detta är dina kort, Y för att ta nya N för att stanna");
                     Console.WriteLine(string.Join(", ", player1.Hand));
                     Console.WriteLine($"Summan av korten i din hand: {string.Join(", ", player1.SumOfCards())}");
@@ -63,13 +63,41 @@ namespace CourseC_sharp_Game
                             cardstack.DrawCard(player1);
                             break;
                         case "N":
-                            Console.Write($"Du stannade vid: {string.Join(", ", player1.SumOfCards())}");
+                            Console.WriteLine("Du stannade");
+                            if (dealer.SumOfCards() > player1.SumOfCards() || dealer.SumOfCards() == blackjack && dealer.SumOfCards() < blackjack)
+                            {
+                                Console.WriteLine($"Dealern vann med summan: {string.Join(", ", dealer.SumOfCards())}");
+                                run = false;
+                                break;
+                            }
+                            if (dealer.SumOfCards() < 17 && dealer.SumOfCards() < player1.SumOfCards())
+                            {
+                                while (dealer.SumOfCards() < 17)
+                                {
+                                    cardstack.DrawCard(dealer);
+                                }
+                                Console.WriteLine($"Dealern drar kort: {string.Join(", ", dealer.Hand)}, och dealerns summa är nu: {string.Join(", ", dealer.SumOfCards())}");
+                               
+                            }
+                            if (player1.SumOfCards() > dealer.SumOfCards())
+                             {
+                            Console.WriteLine("Du vann!");
                             run = false;
+                             }
+
                             break;
                         default:
                             Console.WriteLine($"Felaktig inmatning: {input}, skriv Y eller N");
                             break;
                     }
+                     
+                        if (dealer.SumOfCards() > blackjack)
+                    {
+                        Console.WriteLine("Dealern blev tjock, du vinner!");
+                        break;
+                    }
+                
+
                 }
                 // } 
 
@@ -80,7 +108,7 @@ namespace CourseC_sharp_Game
 
                 // If-condition för om player.sum < 21 && dealer.sum < 17 för att avgöra om dealer använder drawcard() eller inte.
 
-            }
+            //}
         }
 
 
