@@ -14,7 +14,7 @@ namespace CourseC_sharp_Game
         // Stack av 52 Kortobjekt
         private readonly Stack<Card> Stack;
 
-        // Konstruktor 
+        // Konstruktor som gör en kortlek av 52 kort
         public CardStack()
         {
             Stack = new Stack<Card>();
@@ -24,7 +24,7 @@ namespace CourseC_sharp_Game
             }
         }
 
-        // Metod för att ta ett kort
+        // Metod för att dra ett kort ifrån leken
         public void DrawCard(Player player)
         {
             player.Hand.Add(Stack.Pop());

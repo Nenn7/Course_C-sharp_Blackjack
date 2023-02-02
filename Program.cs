@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-Player player1= new Player();
 
+// Skapar ny spelare och dealer
+Player player1= new Player();
 Player dealer = new Player();
 
-dealer.SumOfCards();
-
+// Skapar nytt spel av Blackjack
 BlackjackGame start = new BlackjackGame();
 
+// Kör Playgame-metoden i BlackjackGame
 start.PlayGame();

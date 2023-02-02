@@ -9,18 +9,19 @@ namespace CourseC_sharp_Game
     internal class Card
     {
 
-        // Card value
+        // Slumpat värde av kort
+
         public int CardValue { get; set; }
 
-        // Konstruktor för slumpning av värde (obs alternativt enums för färg/klass senare)
+        // Konstruktor för slumpning av värde
 
         public Card() { 
             Random random = new Random();
 
-            CardValue = random.Next(1,12);  
+            CardValue = random.Next(1,11);  
         }
 
-        // Override ToString 
+        // Override av ToString för att kunna visa upp kortvärde
         public override string ToString()
         {
             return CardValue.ToString();
