@@ -32,6 +32,7 @@ namespace CourseC_sharp_Game
             // Spelinstruktioner
             Console.WriteLine("Välkommen till spelet Blackjack! Ditt mål är att få det totala värdet högre än dealerns, men inte högre än 21.");
             Console.WriteLine("Om dealerns summa är under 17, kommer denne dra kort efter du gjort ditt val. \n");
+            Console.WriteLine($"Dealerns kort är följande: {string.Join(", ", dealer.Hand)}. Summan är: {string.Join(", ", dealer.SumOfCards())} \n");
 
             bool run = true;
             // En while loop för hantering av spelet som körs så länge run = true, eller varken dealer eller spelare har vunnit
@@ -42,7 +43,6 @@ namespace CourseC_sharp_Game
                 int DealerSum = dealer.SumOfCards();
                 int PlayerSum = player1.SumOfCards();
 
-                Console.WriteLine($"Dealerns kort är följande: {string.Join(", ", dealer.Hand)}. Summan är: {DealerSum} \n");
                 Console.WriteLine($"Detta är dina kort: {string.Join(", ", player1.Hand)}. Summan av dessa är: {PlayerSum}");
                 Console.WriteLine("Vill du dra ett kort? Välj \"Y\" för att dra ett kort, \"N\" för att stanna.");
 
